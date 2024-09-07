@@ -154,8 +154,11 @@
     <ClInclude Include="Headers\pch.h" />
     <ClInclude Include="Headers\Memory.h" />
     <ClInclude Include="Headers\MainHackLoop.h" />
+    <ClInclude Include="Headers\TeamGodmode.h" />
+    <ClInclude Include="Headers\InstaKill.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source Files\InstaKill.cpp" />
     <ClCompile Include="Source Files\MainHackLoop.cpp" />
     <ClCompile Include="Source Files\Memory.cpp" />
     <ClCompile Include="Source Files\dllmain.cpp" />
@@ -166,6 +169,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Source Files\setupHooks.cpp" />
+    <ClCompile Include="Source Files\TeamGodmode.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

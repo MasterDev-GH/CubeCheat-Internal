@@ -30,6 +30,12 @@
     <ClInclude Include="Headers\MainHackLoop.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Headers\TeamGodmode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\InstaKill.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source Files\dllmain.cpp">
@@ -45,6 +51,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source Files\MainHackLoop.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Files\TeamGodmode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Files\InstaKill.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

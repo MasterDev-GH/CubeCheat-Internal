@@ -27,12 +27,28 @@ void HackThread(HMODULE hModule) {
     AllocConsole();
     freopen_s(&f, "CONOUT$", "w", stdout);
 
+    if (f == nullptr) {
+        return;
+    }
+
     setupHooks();
 
     mainHackLoopTramp.toggleTrampSBL();
 
     while (!isHackOver) {
         Sleep(100);
+    }
+
+    if (infAmmoNop.isNopOn()) {
+        infAmmoNop.toggleNop();
+    }
+
+    if (TeamGodmodeDetour.isHookOn()) {
+        TeamGodmodeDetour.toggleDetour();
+    }
+
+    if (InstaKillDetour.isHookOn()) {
+        InstaKillDetour.toggleDetour();
     }
 
     fclose(f);
