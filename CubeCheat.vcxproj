@@ -149,6 +149,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Headers\ConsoleAndInput.h" />
     <ClInclude Include="Headers\setupHooks.h" />
     <ClInclude Include="Headers\framework.h" />
     <ClInclude Include="Headers\pch.h" />
@@ -158,6 +159,7 @@
     <ClInclude Include="Headers\InstaKill.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source Files\ConsoleAndInput.cpp" />
     <ClCompile Include="Source Files\InstaKill.cpp" />
     <ClCompile Include="Source Files\MainHackLoop.cpp" />
     <ClCompile Include="Source Files\Memory.cpp" />

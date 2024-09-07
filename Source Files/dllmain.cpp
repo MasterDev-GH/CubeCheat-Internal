@@ -4,6 +4,7 @@
 #include "MainHackLoop.h"
 #include <cstdio>
 #include <chrono>
+#include "ConsoleAndInput.h"
 
 void HackThread(HMODULE hModule);
 
@@ -35,21 +36,12 @@ void HackThread(HMODULE hModule) {
 
     mainHackLoopTramp.toggleTrampSBL();
 
+    printUI();
+
     while (!isHackOver) {
         Sleep(100);
     }
 
-    if (infAmmoNop.isNopOn()) {
-        infAmmoNop.toggleNop();
-    }
-
-    if (TeamGodmodeDetour.isHookOn()) {
-        TeamGodmodeDetour.toggleDetour();
-    }
-
-    if (InstaKillDetour.isHookOn()) {
-        InstaKillDetour.toggleDetour();
-    }
 
     fclose(f);
     FreeConsole();
