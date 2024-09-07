@@ -29,7 +29,7 @@ void HackThread(HMODULE hModule) {
 
     setupHooks();
 
-    mainHackLoopTramp.toggleTrampSBF();
+    mainHackLoopTramp.toggleTrampSBL();
 
     while (!isHackOver) {
         Sleep(100);

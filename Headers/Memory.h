@@ -20,6 +20,8 @@ class Hook {
 public:
 	// stolen bytes before the func call
 	void toggleTrampSBF();
+	// stolen bytes last (after func call)
+	void toggleTrampSBL();
 
 	Hook(BYTE* hookPosition, BYTE* functionToCall, int hookLength);
 	Hook();

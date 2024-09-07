@@ -9,6 +9,8 @@
 
 // add headers that you want to pre-compile here
 #include "framework.h"
-#include "Windows.h"
+#include <Windows.h>
+#include <iostream>
+#include <stdexcept>
 
 #endif //PCH_H

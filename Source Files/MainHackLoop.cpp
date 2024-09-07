@@ -1,6 +1,5 @@
 #pragma once
 #include "pch.h"
-#include <iostream>
 #include "MainHackLoop.h"
 #include "setupHooks.h"
 
@@ -11,7 +10,7 @@ void mainHackLoop() {
 	std::cout << x++ << '\n';
 
 	if (GetAsyncKeyState(VK_F12) & 1) {
-		mainHackLoopTramp.toggleTrampSBF();
+		mainHackLoopTramp.toggleTrampSBL();
 		isHackOver = true;
 	}
 }
