@@ -1,10 +1,10 @@
 // dllmain.cpp : Defines the entry point for the DLL application.
 #include "pch.h"
-#include "setupHooks.h"
-#include "MainHackLoop.h"
 #include <cstdio>
 #include <chrono>
+#include "HackFuncDeclarations.h"
 #include "ConsoleAndInput.h"
+#include "Globals.h"
 
 void HackThread(HMODULE hModule);
 
@@ -24,27 +24,22 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
 }
 
 void HackThread(HMODULE hModule) {
-    FILE *f;
-    AllocConsole();
-    freopen_s(&f, "CONOUT$", "w", stdout);
+    FILE *f = nullptr;
+    // create a console and redirect output
+    setupConsole(&f);
 
-    if (f == nullptr) {
-        return;
-    }
-
-    setupHooks();
-
+    // setup the main hack loop
     mainHackLoopTramp.toggleTrampSBL();
 
+    // The user interface is printed for the first time here
     printUI();
 
     while (!isHackOver) {
+        // Ensures that this thread does not take up too much resources, also prevents UB
         Sleep(100);
     }
 
-
-    fclose(f);
-    FreeConsole();
+    cleanUpHack(f);
 
     FreeLibraryAndExitThread(hModule, 0);
 }

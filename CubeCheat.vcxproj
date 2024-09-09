@@ -79,6 +79,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>$(SolutionDir)Headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -149,16 +150,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Headers\Aimbot.h" />
+    <ClInclude Include="Headers\GameClasses.h" />
+    <ClInclude Include="Headers\HackFuncDeclarations.h" />
+    <ClInclude Include="Headers\Globals.h" />
     <ClInclude Include="Headers\ConsoleAndInput.h" />
-    <ClInclude Include="Headers\setupHooks.h" />
     <ClInclude Include="Headers\framework.h" />
     <ClInclude Include="Headers\pch.h" />
     <ClInclude Include="Headers\Memory.h" />
-    <ClInclude Include="Headers\MainHackLoop.h" />
-    <ClInclude Include="Headers\TeamGodmode.h" />
-    <ClInclude Include="Headers\InstaKill.h" />
+    <ClInclude Include="Headers\playerInfo.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source Files\Aimbot.cpp" />
+    <ClCompile Include="Source Files\Globals.cpp" />
     <ClCompile Include="Source Files\ConsoleAndInput.cpp" />
     <ClCompile Include="Source Files\InstaKill.cpp" />
     <ClCompile Include="Source Files\MainHackLoop.cpp" />
@@ -170,7 +174,6 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Source Files\setupHooks.cpp" />
     <ClCompile Include="Source Files\TeamGodmode.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

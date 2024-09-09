@@ -13,5 +13,7 @@
 #include <iostream>
 #include <format>
 #include <string>
+#include <cmath>
+#include <numbers>
 
 #endif //PCH_H

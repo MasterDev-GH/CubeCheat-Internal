@@ -6,9 +6,10 @@ void printUI();
 void handleInput();
 
 // a clean up function
-void breakHackLoop();
+void cleanUpHack(FILE *f);
 
 // Show/hide console
 void toggleConsole();
 
-std::string boolToSwitch(bool bValue);
+// Create a console
+void setupConsole(FILE **f);
