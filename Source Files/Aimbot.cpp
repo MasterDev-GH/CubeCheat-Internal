@@ -3,10 +3,10 @@
 #include "GameClasses.h"
 
 bool isAimbotOn = false;
-// finds the closest enemy to the localPlayer and returns their playerNumber
-int findClosestEnemy() {
+// finds the closest enemy to the localPlayer and returns their pointer
+Ent* findClosestEnemy() {
 	// A default error condition
-	int closestEnemyPlayerNumber = 0; 
+	Ent* closestEnemy = nullptr; 
 
 	float smallestDistanceFromPlayer = 99999.0f;
 	Ent *me = (Ent*)(*(pStartOfEntityList - 1));
@@ -22,21 +22,21 @@ int findClosestEnemy() {
 
 		if (distanceFromPlayer < smallestDistanceFromPlayer && currentEnt->TeamNum != me->TeamNum && !currentEnt->isDead) {
 			smallestDistanceFromPlayer = distanceFromPlayer;
-			closestEnemyPlayerNumber = currentEnt->playerNumber;
+			closestEnemy = currentEnt;
 		}
 	}
 
-	return closestEnemyPlayerNumber;
+	return closestEnemy;
 }
 
-// Given the playerNumber of an entity (intended to be closest enemy), this function directs aim to their head.
-void Aimbot(int closestEnemy) {
-	if (closestEnemy == 0) {
+// Given the pointer of an entity (intended to be closest enemy), this function directs aim to their head.
+void Aimbot(Ent* closestEnemy) {
+	if (closestEnemy == nullptr) {
 		return;
 	}
 	// Due to the way that the entitylist stores entity pointers (ascending playerNumber order except for localPLayer), we don't need to create a for loop to
 	// match the playerNumber to the correct enemy
-	Ent *enemyToAimAt = *(Ent**)(*pStartOfEntityList + (closestEnemy * 4));
+	Ent *enemyToAimAt = closestEnemy;
 	Ent *me = (Ent*)(*(pStartOfEntityList - 1));
 
 	float relX = enemyToAimAt->FeetX - me->FeetX;
